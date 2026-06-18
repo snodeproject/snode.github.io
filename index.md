@@ -7,6 +7,4 @@ title: Home
 
 {% include features.html %}
 
-{% include install.html %}
-
 {% include example.html %}

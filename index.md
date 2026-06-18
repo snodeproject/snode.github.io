@@ -6,5 +6,3 @@ title: Home
 {% include hero.html %}
 
 {% include features.html %}
-
-{% include example.html %}

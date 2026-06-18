@@ -1,3 +1,11 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* THEME */
 :root {
   --bg: #0f1117;
   --text: #ffffff;
@@ -5,7 +13,6 @@
   --accent: #4f9cff;
 }
 
-/* LIGHT THEME */
 [data-theme="light"] {
   --bg: #ffffff;
   --text: #111111;
@@ -14,174 +21,26 @@
 }
 
 body {
-  margin: 0;
   font-family: Arial, sans-serif;
   background: var(--bg);
   color: var(--text);
 }
 
-/* NAVBAR */
+/* =========================
+   NAVBAR
+========================= */
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  padding: 15px 20px;
-  background: var(--card);
-  align-items: center;
-}
-
-.logo {
-  font-size: 20px;
-  font-weight: bold;
-}
-
-nav a {
-  margin: 0 10px;
-  color: var(--text);
-  text-decoration: none;
-}
-
-.actions {
-  display: flex;
-  gap: 10px;
-}
-
-/* HERO */
-.hero {
-  text-align: center;
-  padding: 80px 20px;
-}
-
-.hero h1 {
-  font-size: 60px;
-  margin-bottom: 10px;
-}
-
-.hero p {
-  opacity: 0.8;
-}
-
-.buttons {
-  margin-top: 20px;
-}
-
-button {
-  padding: 10px 15px;
-  border: none;
-  cursor: pointer;
-  border-radius: 8px;
-}
-
-.primary {
-  background: var(--accent);
-  color: white;
-}
-
-.secondary {
-  background: transparent;
-  border: 1px solid var(--accent);
-  color: var(--text);
-}
-
-
-/* RESET BASE */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.5;
-}
-
-/* NAVBAR */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 14px 20px;
-  background: var(--card);
   position: sticky;
   top: 0;
   z-index: 1000;
-}
 
-/* LOGO */
-.logo {
-  font-size: 18px;
-  font-weight: bold;
-  display: flex;
-  gap: 8px;
-  align-items: center;
-}
-
-
-/* ACTIONS */
-.actions {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-}
-
-/* HAMBURGER */
-.hamburger {
-  display: none;
-  background: none;
-  border: none;
-  color: var(--text);
-  font-size: 20px;
-}
-
-/* HERO RESPONSIVE */
-.hero {
-  text-align: center;
-  padding: 80px 20px;
-  max-width: 900px;
-  margin: auto;
-}
-
-.hero h1 {
-  font-size: clamp(2.5rem, 6vw, 4rem);
-}
-
-.hero p {
-  opacity: 0.8;
-  font-size: clamp(1rem, 2vw, 1.2rem);
-}
-
-.buttons {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-/* BOTTONI */
-button {
-  padding: 10px 14px;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-
-  /* NAVBAR MODERNA */
-.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   padding: 12px 18px;
-  background: rgba(20, 20, 30, 0.7);
+  background: rgba(20, 20, 30, 0.75);
   backdrop-filter: blur(10px);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
 }
 
 /* LEFT */
@@ -192,34 +51,31 @@ button {
 }
 
 .logo {
-  width: 50px;
-  height: 50px;
+  width: 42px;
+  height: 42px;
   object-fit: cover;
   border-radius: 10px;
 }
 
 .brand {
-  font-size: 18px;
   font-weight: bold;
+  font-size: 18px;
 }
 
-/* NAV */
+/* CENTER NAV */
 nav {
   display: flex;
-  gap: 20px;
+  gap: 18px;
 }
 
 nav a {
   color: var(--text);
   text-decoration: none;
-  font-size: 15px;
   opacity: 0.85;
-  transition: 0.2s;
 }
 
 nav a:hover {
   opacity: 1;
-  transform: translateY(-1px);
 }
 
 /* RIGHT */
@@ -236,20 +92,86 @@ nav a:hover {
   border: none;
   color: var(--text);
   font-size: 22px;
+  cursor: pointer;
 }
 
-/* DRAWER MOBILE */
+/* =========================
+   HERO
+========================= */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+}
+
+.hero p {
+  opacity: 0.8;
+}
+
+.buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+button {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.primary {
+  background: var(--accent);
+  color: white;
+}
+
+.secondary {
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--text);
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 768px) {
+
+  nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .right select {
+    display: none;
+  }
+}
+
+/* =========================
+   DRAWER MOBILE
+========================= */
 .mobile-drawer {
   position: fixed;
   top: 0;
   right: -100%;
   width: 70%;
   height: 100vh;
+
   background: var(--card);
+  padding: 80px 20px;
+
   display: flex;
   flex-direction: column;
-  padding: 80px 20px;
   gap: 20px;
+
   transition: 0.3s ease;
   z-index: 2000;
 }
@@ -262,15 +184,4 @@ nav a:hover {
   color: var(--text);
   text-decoration: none;
   font-size: 18px;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  nav {
-    display: none;
-  }
-
-  .hamburger {
-    display: block;
-  }
 }

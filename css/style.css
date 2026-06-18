@@ -185,3 +185,85 @@ button {
   text-decoration: none;
   font-size: 18px;
 }
+
+/* DOWNLOAD PAGE */
+.download {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.version-box {
+  max-width: 600px;
+  margin: 30px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.version {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 14px;
+  border-radius: 10px;
+  background: var(--card);
+}
+
+.v-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.v-name {
+  font-weight: bold;
+}
+
+/* BADGES */
+.badge {
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.current {
+  background: #2563eb;
+  color: white;
+}
+
+.lts {
+  background: #22c55e;
+  color: white;
+}
+
+.eol {
+  background: #ef4444;
+  color: white;
+}
+
+/* BUTTON */
+.select-btn {
+  background: var(--accent);
+  color: white;
+}
+
+/* DOWNLOAD BOX */
+.download-box {
+  margin-top: 40px;
+}
+
+.download-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px 18px;
+  border-radius: 10px;
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+}
+
+.download-btn[disabled] {
+  opacity: 0.4;
+  pointer-events: none;
+}

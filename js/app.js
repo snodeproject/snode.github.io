@@ -47,17 +47,25 @@ document.getElementById("langSwitcher").onchange = (e) => {
 loadLang(localStorage.getItem("lang") || "it");
 
 
-// -------------
-//    MENU
-// -------------
 const hamburger = document.getElementById("hamburger");
 const drawer = document.getElementById("drawer");
 
-hamburger.onclick = () => {
-  drawer.classList.toggle("active");
-};
+function closeDrawer() {
+  drawer.classList.remove("active");
+}
 
-// chiudi drawer se clicchi un link
+hamburger.addEventListener("click", () => {
+  drawer.classList.toggle("active");
+});
+
+// chiudi cliccando link
 drawer.querySelectorAll("a").forEach(a => {
-  a.onclick = () => drawer.classList.remove("active");
+  a.addEventListener("click", closeDrawer);
+});
+
+// chiudi cliccando fuori (bonus UX)
+document.addEventListener("click", (e) => {
+  if (!drawer.contains(e.target) && !hamburger.contains(e.target)) {
+    closeDrawer();
+  }
 });
